@@ -1,6 +1,5 @@
 from tinygrad import Tensor
 from arange import arange
-from where import where
 
 
 def ones(len: int) -> Tensor:
