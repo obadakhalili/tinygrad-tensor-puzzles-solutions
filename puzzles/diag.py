@@ -1,23 +1,15 @@
 from tinygrad import Tensor
 from arange import arange
-from where import where
 from ones import ones
 
 
 def diag(t: Tensor) -> Tensor:
     if len(t.shape) != 2 or t.shape[0] != t.shape[1]:
         raise ValueError("only works for 2-dim square tensors")
-    height, width = t.shape
-    height_arange = arange(height)
-    keep_map = height_arange[:, None] == height_arange
-    diag_mat = where(keep_map, t, Tensor([0]))  # or t * keept_map
-    return diag_mat @ ones(height)
+    return t * (arange(t.shape[0])[:, None] == arange(t.shape[0])) @ ones(t.shape[0])
 
     # alternative solution:
-    # height = t.shape[0]
-    # idx = arange(height)
-    # diag = t[idx, idx]
-    # return diag
+    # return t[idx := list(range(t.shape[0])), idx]
 
 
 if __name__ == "__main__":

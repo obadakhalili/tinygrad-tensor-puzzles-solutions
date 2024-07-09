@@ -7,8 +7,7 @@ os.environ["LLVM"] = "1"
 
 
 def ones(len: int) -> Tensor:
-    len_arange = arange(len)
-    return (len_arange == len_arange) * 1
+    return ((len_arange := arange(len)) == len_arange) * 1
 
 
 if __name__ == "__main__":
