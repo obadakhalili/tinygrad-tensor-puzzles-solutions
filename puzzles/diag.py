@@ -1,4 +1,3 @@
-import os
 from tinygrad import Tensor
 from arange import arange
 from where import where
@@ -11,7 +10,7 @@ def diag(t: Tensor) -> Tensor:
     height, width = t.shape
     height_arange = arange(height)
     keep_map = height_arange[:, None] == height_arange
-    diag_mat = where(keep_map, t, Tensor([0])) # or t * keept_map
+    diag_mat = where(keep_map, t, Tensor([0]))  # or t * keept_map
     return diag_mat @ ones(height)
 
     # alternative solution:
