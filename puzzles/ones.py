@@ -1,10 +1,14 @@
+import os
 from tinygrad import Tensor
 from arange import arange
 
+# default backend, CLANG, throws "error: self-comparison always evaluates to false"
+os.environ["LLVM"] = "1"
+
 
 def ones(len: int) -> Tensor:
-    # return Tensor([1])._broadcast_to((len,))
-    return (arange(len) >= 0) * 1
+    len_arange = arange(len)
+    return (len_arange == len_arange) * 1
 
 
 if __name__ == "__main__":
