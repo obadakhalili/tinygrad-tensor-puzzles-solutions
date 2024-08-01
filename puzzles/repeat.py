@@ -1,6 +1,5 @@
 from tinygrad import Tensor
 from ones import ones
-from arange import arange
 
 
 def repeat(a: Tensor, i: int) -> Tensor:
