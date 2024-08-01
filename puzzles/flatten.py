@@ -3,6 +3,9 @@ from arange import arange
 
 
 def flatten(a: Tensor):
+    if len(a.shape) != 2:
+        raise ValueError("input must be 2D")
+
     def floor_div(t: Tensor, x: int):
         return (t / x).cast(dtypes.int)
 
