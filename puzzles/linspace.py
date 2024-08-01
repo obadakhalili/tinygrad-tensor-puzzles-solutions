@@ -8,4 +8,4 @@ def linspace(i: int, j: int, k: int) -> Tensor:
 
 
 if __name__ == "__main__":
-    linspace(10, 1, 5)
+    print(linspace(10, 1, 5).numpy())
