@@ -1,6 +1,6 @@
 # tinygrad Tensor Puzzles
 
-- This project adapts [Sasha's Tensor Puzzles](https://github.com/srush/Tensor-Puzzles) to tinygrad
+- This project contains solutions of [Sasha's Tensor Puzzles](https://github.com/srush/Tensor-Puzzles) using tinygrad
 
 - I complay with the specified rules:
 
